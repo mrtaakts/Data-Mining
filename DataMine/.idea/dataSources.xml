@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="dataset" uuid="41c82c94-70ab-4711-abd8-23a3319c9255">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\halil\Desktop\Veri Madenciliği\DataMiningProject\DataMine\venv\dataset.sqlite</jdbc-url>
+    </data-source>
+  </component>
+</project>
