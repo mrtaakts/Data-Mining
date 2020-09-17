@@ -1,5 +1,9 @@
 ### --------------------
 
+Bu projemizde, 5 farklı sınıflandırma yöntemini kullanarak python 3.8 üzerinde sınıflandırma işlemleri yapmış bulunmaktayız.
+
+> deneme
+
 ### Kurulum
 
 ### 1. Repo'yu Klonla
