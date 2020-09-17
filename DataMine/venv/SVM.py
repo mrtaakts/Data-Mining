@@ -1,58 +1,38 @@
 import sqlite3
 import pandas as pd
-from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
-import csv_to_sqlite
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import plot_confusion_matrix
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
+from sklearn import svm
 
 conn= sqlite3.connect('data.sqlite')
 
 df= pd.read_sql_query("SELECT * FROM fish_data", conn)
+
 print(df.head()) # fish_data db'sindeki ilk 5 veriyi gösteriyorum
-len(df)
+
 y=df["Spec"]
 df = df.dropna()
 X=df.drop(["Spec"], axis=1)
-#print(y)
-#print(X)
 scaler = MinMaxScaler(feature_range=(0,1))
 X=scaler.fit_transform(np.array(X))
-
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.30, shuffle=True)
+SupportVectorMachine = svm.LinearSVC(max_iter=1000,multi_class='crammer_singer')
 
-knn = KNeighborsClassifier(n_neighbors=4,metric='euclidean',algorithm='ball_tree')
-knn_model = knn.fit(X_train, y_train)
-knn_model
-print(knn_model)
-
-y_pred = knn_model.predict(X_test)
+SupportVectorMachine_model = SupportVectorMachine.fit(X_train, y_train)
+SupportVectorMachine_model
+y_pred = SupportVectorMachine_model.predict(X_test)
 
 print(accuracy_score(y_test, y_pred))
-
 
 confusion_matrix =confusion_matrix(y_test, y_pred)
 
 print(confusion_matrix)
-
-#TP= confusion_matrix[0,0]
-#FP = np.array( confusion_matrix[0,1:7].sum())
-#FN= np.array( confusion_matrix[1:7,0].sum())
-#TN= np.array( confusion_matrix[1:7,1:7].sum())
-#Sensitivity = TP/(TP + FN)
-#Specificity = TN/(TN + FP)
-
-#print("TP:",TP)
-#print("FP:",FP)
-#print("FN:",FN)
-#print("TN:",TN)
-#print("Sensitivity:",Sensitivity)
-#print("Specificity:",Specificity)
 
 
 def counts_from_confusion(confusion):
@@ -91,11 +71,6 @@ def counts_from_confusion(confusion):
 
 list = counts_from_confusion(confusion_matrix)
 print(list)
-plot_confusion_matrix(knn,X_test,y_test)
-plt.savefig("knnmatrix")
+plot_confusion_matrix(SupportVectorMachine,X_test,y_test)
+plt.savefig("svmmatrix")
 plt.show()
-
-
-
-
-
