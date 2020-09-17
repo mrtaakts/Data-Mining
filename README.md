@@ -2,7 +2,13 @@
 
 Bu projemizde, 5 farklı sınıflandırma yöntemini kullanarak python 3.8 üzerinde sınıflandırma işlemleri yapmış bulunmaktayız.
 
-> deneme
+> Uyguladığımız adımlar
+
+- Performans metriklerimizi accuracy, sensitivity ve specificity üzerinden uygulayarak en uygun parametre seçimlerimizi yaptık.
+- Uygulanan her yöntemde 7 class için de tüm performans metriklerimizi ölçtük.
+- Yöntemler uygulanmadan önce, boyut azaltma ve normalizasyon işlemlerimizi yaptık.
+- Yöntemlerde kullanılan parametrelerin performansa etkisi analiz edilerek optimum seviyeye indirgendi.
+- Tablolar ve figürler ile karmaşıklık matrisini gösterdik.
 
 ### Kurulum
 
