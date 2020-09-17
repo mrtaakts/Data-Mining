@@ -1,6 +1,6 @@
 ### Proje Hakkında
 
-Bu projemizde, 5 farklı sınıflandırma yöntemini kullanarak python 3.8 üzerinde sınıflandırma işlemleri yapmış bulunmaktayız.
+Bu projemizde, 5 farklı sınıflandırma yöntemini kullanarak python 3.8 üzerinde, numpy, pandas, matplotlib ve sklearn kütüphanelerini kullanarak, sınıflandırma işlemleri yapmış bulunmaktayız.
 
 > Uyguladığımız adımlar
 
